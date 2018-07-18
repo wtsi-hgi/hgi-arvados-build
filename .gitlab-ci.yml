@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build_debian8:
+  stage: build
+  tags:
+   - docker-privileged
+  image: debian:8
+  script:
+    - "subrepos/arvados/build/run-build-packages-one-target.sh debian8"
+  only:
+    - master
