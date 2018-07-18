@@ -1,0 +1,49 @@
+---
+layout: default
+navsection: userguide
+title: "Getting an API token"
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+The Arvados API token is a secret key that enables the @arv@ command line client to access Arvados with the proper permissions.
+
+Access the Arvados Workbench using this link: "{{site.arvados_workbench_host}}/":{{site.arvados_workbench_host}}/  (Replace the hostname portion with the hostname of your local Arvados instance if necessary.)
+
+Open a shell on the system where you want to use the Arvados client. This may be your local workstation, or an Arvados virtual machine accessed with "Webshell":{{site.baseurl}}/user/getting_started/vm-login-with-webshell.html or SSH (instructions for "Unix":{{site.baseurl}}/user/getting_started/ssh-access-unix.html#login or "Windows":{{site.baseurl}}/user/getting_started/ssh-access-windows.html#login).
+
+In the Arvados Workbench, click on the dropdown menu icon <span class="fa fa-lg fa-user"></span> <span class="caret"></span> in the upper right corner of the top navigation menu to access the user settings menu, and click on the menu item *Current token*, which lists your current token and instructions to set up your environment.
+
+h2. Setting environment variables
+
+The *Current token* page, accessed using the dropdown menu icon <span class="fa fa-lg fa-user"></span> <span class="caret"></span> in the upper right corner of the top navigation menu, includes a command you may copy and paste directly into the shell.  It will look something as the following.
+
+bc. HISTIGNORE=$HISTIGNORE:'export ARVADOS_API_TOKEN=*'
+export ARVADOS_API_TOKEN=2jv9346o396exampledonotuseexampledonotuseexes7j1ld
+export ARVADOS_API_HOST={{ site.arvados_api_host }}
+unset ARVADOS_API_HOST_INSECURE
+
+* The @export@ command puts a local shell variable into the environment that will be inherited by child processes such as the @arv@ client.
+
+h2. settings.conf
+
+Arvados tools will also look for the authentication information in @~/.config/arvados/settings.conf@. If you have already put the variables into the environment following the instructions above, you can use these commands to create an Arvados configuration file:
+
+<notextile>
+<pre><code>$ <span class="userinput">echo "ARVADOS_API_HOST=$ARVADOS_API_HOST" > ~/.config/arvados/settings.conf</span>
+$ <span class="userinput">echo "ARVADOS_API_TOKEN=$ARVADOS_API_TOKEN" >> ~/.config/arvados/settings.conf</span>
+</code></pre>
+</notextile>
+
+h2. .bashrc
+
+Alternately, you may add the declarations of @ARVADOS_API_HOST@ and @ARVADOS_API_TOKEN@ to the @~/.bashrc@ file on the system on which you intend to use the Arvados client.  If you have already put the variables into the environment following the instructions above, you can use these commands to append the environment variables to your @~/.bashrc@:
+
+<notextile>
+<pre><code>$ <span class="userinput">echo "export ARVADOS_API_HOST=$ARVADOS_API_HOST" >> ~/.bashrc</span>
+$ <span class="userinput">echo "export ARVADOS_API_TOKEN=$ARVADOS_API_TOKEN" >> ~/.bashrc</span>
+</code></pre>
+</notextile>

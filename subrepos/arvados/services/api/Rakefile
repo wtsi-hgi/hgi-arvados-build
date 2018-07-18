@@ -1,0 +1,89 @@
+#!/usr/bin/env rake
+# Copyright (C) The Arvados Authors. All rights reserved.
+#
+# SPDX-License-Identifier: AGPL-3.0
+
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require File.expand_path('../config/application', __FILE__)
+
+Server::Application.load_tasks
+
+namespace :test do
+  task(:run).clear
+  # Copied from the definition in Rails 3.2.
+  # This may need to be updated if we upgrade Rails.
+  task :run do
+    errors = %w(test:units test:functionals test:integration test:tasks).collect do |task|
+      begin
+        Rake::Task[task].invoke
+        nil
+      rescue => e
+        { :task => task, :exception => e }
+      end
+    end.compact
+
+    if errors.any?
+      puts errors.map { |e| "Errors running #{e[:task]}! #{e[:exception].inspect}" }.join("\n")
+      abort
+    end
+  end
+end
+
+namespace :db do
+  namespace :structure do
+    task :dump do
+      require 'tempfile'
+      origfnm = File.expand_path('../db/structure.sql', __FILE__)
+      tmpfnm = Tempfile.new 'structure.sql', File.expand_path('..', origfnm)
+      copyright_done = false
+      started = false
+      begin
+        tmpfile = File.new tmpfnm, 'w'
+        origfile = File.new origfnm
+        origfile.each_line do |line|
+          if !copyright_done
+            if !/Copyright .* Arvados/.match(line)
+               tmpfile.write "-- Copyright (C) The Arvados Authors. All rights reserved.\n--\n-- SPDX-License-Identifier: AGPL-3.0\n\n"
+            end
+            copyright_done = true
+          end
+
+          if !started && /^[^-\n]/ !~ line
+            # Ignore the "PostgreSQL database dump" comment block,
+            # which varies from one client version to the next.
+            next
+          end
+          started = true
+
+          if /^SET (lock_timeout|idle_in_transaction_session_timeout|row_security) = / =~ line
+            # Avoid edit wars between versions that do/don't write (and can/can't execute) this line.
+            next
+          elsif /^COMMENT ON EXTENSION/ =~ line
+            # Avoid warning message when loading:
+            # "structure.sql:22: ERROR:  must be owner of extension plpgsql"
+            tmpfile.write "-- "
+          end
+          tmpfile.write line
+        end
+        origfile.close
+        tmpfile.close
+        File.rename tmpfnm, origfnm
+        tmpfnm = false
+      ensure
+        File.unlink tmpfnm if tmpfnm
+      end
+    end
+  end
+end
+
+# Work around Rails3+PostgreSQL9.5 incompatibility (pg_dump used to
+# accept -i as a no-op, but now it's not accepted at all).
+module Kernel
+  alias_method :orig_backtick, :`
+  def `(*args) #`#` sorry, parsers
+    args[0].sub!(/\Apg_dump -i /, 'pg_dump ') rescue nil
+    orig_backtick(*args)
+  end
+end

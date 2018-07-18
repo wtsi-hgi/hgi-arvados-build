@@ -1,0 +1,109 @@
+---
+layout: default
+navsection: api
+navmenu: API Methods
+title: "virtual_machines"
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+API endpoint base: @https://{{ site.arvados_api_host }}/arvados/v1/virtual_machines@
+
+Object type: @2x53u@
+
+Example UUID: @zzzzz-2x53u-0123456789abcde@
+
+h2. Resource
+
+The virtual_machines resource lists compute resources in the Arvados cluster to which a user may log in to get an interactive shell (via ssh or webshell).
+
+Each VirtualMachine has, in addition to the "Common resource fields":{{site.baseurl}}/api/resources.html:
+
+table(table table-bordered table-condensed).
+|_. Attribute|_. Type|_. Description|_. Example|
+|hostname|string|||
+
+h2. Methods
+
+See "Common resource methods":{{site.baseurl}}/api/methods.html for more information about @create@, @delete@, @get@, @list@, and @update@.
+
+Required arguments are displayed in %{background:#ccffcc}green%.
+
+h3. create
+
+Create a new VirtualMachine.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+|virtual_machine|object||query||
+
+h3. delete
+
+Delete an existing VirtualMachine.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the VirtualMachine in question.|path||
+
+h3. get
+
+Gets a VirtualMachine's metadata by UUID.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the VirtualMachine in question.|path||
+
+h3(#logins). logins
+
+Get a list of SSH keys and account names that should be able to log in to a given virtual machine.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string||path||
+
+The response is an object with the field @items@ containing an array of objects in the following format:
+
+table(table table-bordered table-condensed).
+|_. Key|_. Value type|_. Description|_. Example|
+|username|string|Name of the Unix login account to which the user should be able to log in|@"jsmith"@|
+|hostname|string|Hostname of the virtual machine|@"shell.xyzzy.arvadosapi.com"@|
+|public_key|string|SSH public key|@"ssh-rsa AAAAB3NzaC1yc2E..."@|
+|user_uuid|string|UUID of the user who should be able to log in|@"xyzzy-tpzed-mv4d7dy7n91te11"@|
+|virtual_machine_uuid|string|UUID of the "virtual machine resource":{{site.baseurl}}/api/methods/virtual_machines.html|@"zzzzz-2x53u-kvszmclnbjuv8xc"@|
+|authorized_key_uuid|string|UUID of the "authorized key resource":{{site.baseurl}}/api/methods/authorized_keys.html|@"zzzzz-fngyi-v9p0cyfmjxbio64"@|
+
+h3. get_all_logins
+
+Get a list of SSH keys and account names that should be able to log in for every virtual machine in the system.
+
+Arguments: none.
+
+The response has the same format as the response to the "logins method":#logins above.
+
+h3. list
+
+List virtual_machines.
+
+See "common resource list method.":{{site.baseurl}}/api/methods.html#index
+
+h3. update
+
+Update attributes of an existing VirtualMachine.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the VirtualMachine in question.|path||
+|virtual_machine|object||query||

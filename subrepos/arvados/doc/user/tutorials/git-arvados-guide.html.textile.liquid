@@ -1,0 +1,105 @@
+---
+layout: default
+navsection: userguide
+title: Working with an Arvados git repository
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+This tutorial describes how to work with a new Arvados git repository. Working with an Arvados git repository is analogous to working with other public git repositories. It will show you how to upload custom scripts to a remote Arvados repository, so you can use it in Arvados pipelines.
+
+{% include 'tutorial_expectations' %}
+
+{% include 'tutorial_git_repo_expectations' %}
+
+{% include 'notebox_begin' %}
+For more information about using Git, try
+<notextile>
+<pre><code>$ <span class="userinput">man gittutorial</span></code></pre>
+</notextile> or *"search Google for Git tutorials":http://google.com/#q=git+tutorial*.
+{% include 'notebox_end' %}
+
+h2. Cloning an Arvados repository
+
+Before you start using Git, you should do some basic configuration (you only need to do this the first time):
+
+<notextile>
+<pre><code>~$ <span class="userinput">git config --global user.name "Your Name"</span>
+~$ <span class="userinput">git config --global user.email $USER@example.com</span></code></pre>
+</notextile>
+
+On the Arvados Workbench, click on the dropdown menu icon <span class="fa fa-lg fa-user"></span> <span class="caret"></span> in the upper right corner of the top navigation menu to access the user settings menu, and click on the menu item *Repositories*. In the *Repositories* page, you should see the @$USER/tutorial@ repository listed in the *name* column.  Next to *name* is the column *URL*. Copy the *URL* value associated with your repository.  This should look like <notextile><code>https://git.{{ site.arvados_api_host }}/$USER/tutorial.git</code></notextile>. Alternatively, you can use <notextile><code>git@git.{{ site.arvados_api_host }}:$USER/tutorial.git</code></notextile>
+
+Next, on the Arvados virtual machine, clone your Git repository:
+
+<notextile>
+<pre><code>~$ <span class="userinput">cd $HOME</span> # (or wherever you want to install)
+~$ <span class="userinput">git clone https://git.{{ site.arvados_api_host }}/$USER/tutorial.git</span>
+Cloning into 'tutorial'...</code></pre>
+</notextile>
+
+This will create a Git repository in the directory called @tutorial@ in your home directory. Say yes when prompted to continue with connection.
+Ignore any warning that you are cloning an empty repository.
+
+*Note:* If you are prompted for username and password when you try to git clone using this command, you may first need to update your git configuration. Execute the following commands to update your git configuration.
+
+<notextile>
+<pre>
+<code>~$ <span class="userinput">git config 'credential.https://git.{{ site.arvados_api_host }}/.username' none</span></code>
+<code>~$ <span class="userinput">git config 'credential.https://git.{{ site.arvados_api_host }}/.helper' '!cred(){ cat >/dev/null; if [ "$1" = get ]; then echo password=$ARVADOS_API_TOKEN; fi; };cred'</span></code>
+</pre>
+</notextile>
+
+h2. Creating a git branch in an Arvados repository
+
+Create a git branch named *tutorial_branch* in the *tutorial* Arvados git repository.
+
+<notextile>
+<pre><code>~$ <span class="userinput">cd tutorial</span>
+~/tutorial$ <span class="userinput">git checkout -b tutorial_branch</span>
+</code></pre>
+</notextile>
+
+h2. Adding scripts to an Arvados repository
+
+Arvados crunch scripts need to be added in a *crunch_scripts* subdirectory in the repository. If this subdirectory does not exist, first create it in the local repository and change to that directory:
+
+<notextile>
+<pre><code>~/tutorial$ <span class="userinput">mkdir crunch_scripts</span>
+~/tutorial$ <span class="userinput">cd crunch_scripts</span></code></pre>
+</notextile>
+
+Next, using @nano@ or your favorite Unix text editor, create a new file called @hash.py@ in the @crunch_scripts@ directory.
+
+notextile. <pre>~/tutorial/crunch_scripts$ <code class="userinput">nano hash.py</code></pre>
+
+Add the following code to compute the MD5 hash of each file in a collection
+
+<notextile> {% code 'tutorial_hash_script_py' as python %} </notextile>
+
+Make the file executable:
+
+notextile. <pre><code>~/tutorial/crunch_scripts$ <span class="userinput">chmod +x hash.py</span></code></pre>
+
+Next, add the file to the git repository.  This tells @git@ that the file should be included on the next commit.
+
+notextile. <pre><code>~/tutorial/crunch_scripts$ <span class="userinput">git add hash.py</span></code></pre>
+
+Next, commit your changes.  All staged changes are recorded into the local git repository:
+
+<notextile>
+<pre><code>~/tutorial/crunch_scripts$ <span class="userinput">git commit -m "my first script"</span>
+</code></pre>
+</notextile>
+
+Finally, upload your changes to the remote repository:
+
+<notextile>
+<pre><code>~/tutorial/crunch_scripts$ <span class="userinput">git push origin tutorial_branch</span>
+</code></pre>
+</notextile>
+
+Although this tutorial shows how to add a python script to Arvados, the same steps can be used to add any of your custom bash, R, or python scripts to an Arvados repository.

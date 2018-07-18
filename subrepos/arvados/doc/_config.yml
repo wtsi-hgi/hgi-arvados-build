@@ -1,0 +1,189 @@
+# Copyright (C) The Arvados Authors. All rights reserved.
+#
+# SPDX-License-Identifier: CC-BY-SA-3.0
+
+# baseurl is the location of the generated site from the browser's
+# perspective (e.g., http://doc.arvados.org or
+# file:///tmp/arvados/doc/.site). To make docs show up inside
+# workbench, use /doc here and add a symlink at
+# apps/workbench/public/doc pointing to ../../../doc/.site
+# You can also set these on the command line:
+# $ rake generate baseurl=/example arvados_api_host=example.com
+
+baseurl:
+arvados_api_host: localhost
+arvados_workbench_host: http://localhost
+
+exclude: ["Rakefile", "tmp", "vendor"]
+
+navbar:
+  userguide:
+    - Welcome:
+      - user/index.html.textile.liquid
+      - user/getting_started/community.html.textile.liquid
+    - Run a workflow using Workbench:
+      - user/getting_started/workbench.html.textile.liquid
+      - user/tutorials/tutorial-workflow-workbench.html.textile.liquid
+    - Access an Arvados virtual machine:
+      - user/getting_started/vm-login-with-webshell.html.textile.liquid
+      - user/getting_started/ssh-access-unix.html.textile.liquid
+      - user/getting_started/ssh-access-windows.html.textile.liquid
+      - user/getting_started/check-environment.html.textile.liquid
+      - user/reference/api-tokens.html.textile.liquid
+    - Working with data sets:
+      - user/tutorials/tutorial-keep.html.textile.liquid
+      - user/tutorials/tutorial-keep-get.html.textile.liquid
+      - user/tutorials/tutorial-keep-collection-lifecycle.html.textile.liquid
+      - user/tutorials/tutorial-keep-mount.html.textile.liquid
+      - user/topics/keep.html.textile.liquid
+      - user/topics/arv-copy.html.textile.liquid
+      - user/topics/storage-classes.html.textile.liquid
+    - Running workflows at the command line:
+      - user/cwl/cwl-runner.html.textile.liquid
+      - user/cwl/cwl-run-options.html.textile.liquid
+    - Working with git repositories:
+      - user/tutorials/add-new-repository.html.textile.liquid
+      - user/tutorials/git-arvados-guide.html.textile.liquid
+    - Develop an Arvados workflow:
+      - user/tutorials/intro-crunch.html.textile.liquid
+      - user/tutorials/writing-cwl-workflow.html.textile.liquid
+      - user/cwl/cwl-style.html.textile.liquid
+      - user/cwl/cwl-extensions.html.textile.liquid
+      - user/topics/arv-docker.html.textile.liquid
+    - Reference:
+      - user/topics/link-accounts.html.textile.liquid
+      - user/reference/cookbook.html.textile.liquid
+    - Arvados License:
+      - user/copying/copying.html.textile.liquid
+      - user/copying/agpl-3.0.html
+      - user/copying/LICENSE-2.0.html
+      - user/copying/by-sa-3.0.html
+    - Obsolete documentation:
+      - user/topics/running-pipeline-command-line.html.textile.liquid
+      - user/topics/arv-run.html.textile.liquid
+      - user/tutorials/running-external-program.html.textile.liquid
+      - user/topics/crunch-tools-overview.html.textile.liquid
+      - user/tutorials/tutorial-firstscript.html.textile.liquid
+      - user/tutorials/tutorial-submit-job.html.textile.liquid
+      - user/topics/tutorial-parallel.html.textile.liquid
+      - user/topics/run-command.html.textile.liquid
+      - user/reference/job-pipeline-ref.html.textile.liquid
+      - user/examples/crunch-examples.html.textile.liquid
+      - user/topics/tutorial-trait-search.html.textile.liquid
+  sdk:
+    - Overview:
+      - sdk/index.html.textile.liquid
+    - Python:
+      - sdk/python/sdk-python.html.textile.liquid
+      - sdk/python/example.html.textile.liquid
+      - sdk/python/python.html.textile.liquid
+      - sdk/python/arvados-fuse.html.textile.liquid
+      - sdk/python/events.html.textile.liquid
+      - sdk/python/cookbook.html.textile.liquid
+      - sdk/python/crunch-utility-libraries.html.textile.liquid
+    - CLI:
+      - sdk/cli/install.html.textile.liquid
+      - sdk/cli/index.html.textile.liquid
+      - sdk/cli/reference.html.textile.liquid
+      - sdk/cli/subcommands.html.textile.liquid
+    - Go:
+      - sdk/go/index.html.textile.liquid
+      - sdk/go/example.html.textile.liquid
+    - R:
+      - sdk/R/index.html.md
+      - sdk/R/arvados/index.html.textile.liquid
+    - Perl:
+      - sdk/perl/index.html.textile.liquid
+      - sdk/perl/example.html.textile.liquid
+    - Ruby:
+      - sdk/ruby/index.html.textile.liquid
+      - sdk/ruby/example.html.textile.liquid
+    - Java:
+      - sdk/java/index.html.textile.liquid
+      - sdk/java/example.html.textile.liquid
+  api:
+    - Concepts:
+      - api/index.html.textile.liquid
+      - api/tokens.html.textile.liquid
+      - api/requests.html.textile.liquid
+      - api/methods.html.textile.liquid
+      - api/resources.html.textile.liquid
+    - Permission and authentication:
+      - api/methods/api_client_authorizations.html.textile.liquid
+      - api/methods/api_clients.html.textile.liquid
+      - api/methods/authorized_keys.html.textile.liquid
+      - api/methods/groups.html.textile.liquid
+      - api/methods/users.html.textile.liquid
+    - System resources:
+      - api/methods/keep_services.html.textile.liquid
+      - api/methods/links.html.textile.liquid
+      - api/methods/logs.html.textile.liquid
+      - api/methods/nodes.html.textile.liquid
+      - api/methods/virtual_machines.html.textile.liquid
+      - api/methods/keep_disks.html.textile.liquid
+    - Data management:
+      - api/methods/collections.html.textile.liquid
+      - api/methods/repositories.html.textile.liquid
+    - Container engine:
+      - api/methods/container_requests.html.textile.liquid
+      - api/methods/containers.html.textile.liquid
+      - api/methods/workflows.html.textile.liquid
+    - Jobs engine (deprecated):
+      - api/crunch-scripts.html.textile.liquid
+      - api/methods/jobs.html.textile.liquid
+      - api/methods/job_tasks.html.textile.liquid
+      - api/methods/pipeline_instances.html.textile.liquid
+      - api/methods/pipeline_templates.html.textile.liquid
+    - Metadata for bioinformatics:
+      - api/methods/humans.html.textile.liquid
+      - api/methods/specimens.html.textile.liquid
+      - api/methods/traits.html.textile.liquid
+  architecture:
+    - Topics:
+      - architecture/index.html.textile.liquid
+      - api/storage.html.textile.liquid
+      - api/execution.html.textile.liquid
+      - api/permission-model.html.textile.liquid
+  admin:
+    - Topics:
+      - admin/index.html.textile.liquid
+      - admin/upgrading.html.textile.liquid
+      - install/cheat_sheet.html.textile.liquid
+      - user/topics/arvados-sync-groups.html.textile.liquid
+      - admin/storage-classes.html.textile.liquid
+      - admin/migrating-providers.html.textile.liquid
+      - admin/merge-remote-account.html.textile.liquid
+      - install/migrate-docker19.html.textile.liquid
+  installguide:
+    - Overview:
+      - install/index.html.textile.liquid
+    - Docker quick start:
+      - install/arvbox.html.textile.liquid
+    - Manual installation:
+      - install/install-manual-prerequisites.html.textile.liquid
+      - install/install-postgresql.html.textile.liquid
+      - install/install-sso.html.textile.liquid
+      - install/install-api-server.html.textile.liquid
+      - install/install-ws.html.textile.liquid
+      - install/install-arv-git-httpd.html.textile.liquid
+      - install/install-workbench-app.html.textile.liquid
+      - install/install-shell-server.html.textile.liquid
+      - install/create-standard-objects.html.textile.liquid
+      - install/install-keepstore.html.textile.liquid
+      - install/configure-fs-storage.html.textile.liquid
+      - install/configure-s3-object-storage.html.textile.liquid
+      - install/configure-azure-blob-storage.html.textile.liquid
+      - install/install-keepproxy.html.textile.liquid
+      - install/install-keep-web.html.textile.liquid
+      - install/install-keep-balance.html.textile.liquid
+    - Containers API support on SLURM:
+      - install/crunch2-slurm/install-prerequisites.html.textile.liquid
+      - install/crunch2-slurm/install-slurm.html.textile.liquid
+      - install/crunch2-slurm/install-compute-node.html.textile.liquid
+      - install/crunch2-slurm/install-dispatch.html.textile.liquid
+      - install/crunch2-slurm/install-test.html.textile.liquid
+      - install/install-nodemanager.html.textile.liquid
+      - install/install-compute-ping.html.textile.liquid
+    - Jobs API support (deprecated):
+      - install/install-crunch-dispatch.html.textile.liquid
+      - install/install-compute-node.html.textile.liquid

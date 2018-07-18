@@ -1,0 +1,81 @@
+---
+layout: default
+navsection: sdk
+navmenu: Python
+title: Examples
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+See "Arvados GoDoc":https://godoc.org/git.curoverse.com/arvados.git/sdk/go for detailed documentation.
+
+In these examples, the site prefix is @aaaaa@.
+
+h2.  Initialize SDK
+
+{% codeblock as go %}
+import (
+  "git.curoverse.com/arvados.git/sdk/go/arvados"
+  "git.curoverse.com/arvados.git/sdk/go/arvadosclient"
+}
+
+func main() {
+  arv, err := arvadosclient.MakeArvadosClient()
+  if err != nil {
+    log.Fatalf("Error setting up arvados client %s", err.Error())
+  }
+}
+{% endcodeblock %}
+
+h2. create
+
+{% codeblock as go %}
+  var collection arvados.Collection
+  err := api.Create("collections", Dict{"collection": Dict{"name": "create example"}}, &collection)
+{% endcodeblock %}
+
+h2. delete
+
+{% codeblock as go %}
+  var collection arvados.Collection
+  err := api.Delete("collections", "aaaaa-4zz18-ccccccccccccccc", Dict{}, &collection)
+{% endcodeblock %}
+
+h2. get
+
+{% codeblock as go %}
+  var collection arvados.Collection
+  err := api.Get("collections", "aaaaa-4zz18-ccccccccccccccc", Dict{}, &collection)
+{% endcodeblock %}
+
+h2. list
+
+{% codeblock as go %}
+  var collection arvados.Collection
+  err := api.List("collections", Dict{}, &collection)
+{% endcodeblock %}
+
+h2. update
+
+{% codeblock as go %}
+  var collection arvados.Collection
+  err := api.Update("collections", "aaaaa-4zz18-ccccccccccccccc", Dict{"collection": Dict{"name": "update example"}}, &collection)
+{% endcodeblock %}
+
+h2. Get current user
+
+{% codeblock as go %}
+  var user arvados.User
+  err := api.Get("users", "current", Dict{}, &user)
+{% endcodeblock %}
+
+h2. Example program
+
+You can save this source as a .go file and run it:
+
+<notextile>{% code 'example_sdk_go' as go %}</notextile>
+
+A few more usage examples can be found in the "services/keepproxy":https://dev.arvados.org/projects/arvados/repository/revisions/master/show/services/keepproxy and "sdk/go/keepclient":https://dev.arvados.org/projects/arvados/repository/revisions/master/show/sdk/go/keepclient directories in the arvados source tree.

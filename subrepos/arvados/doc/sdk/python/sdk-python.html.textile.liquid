@@ -1,0 +1,157 @@
+---
+layout: default
+navsection: sdk
+navmenu: Python
+title: "Installation"
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+The Python SDK provides access from Python to the Arvados API and Keep.  It also includes a number of command line tools for using and administering Arvados and Keep, and some conveniences for use in Crunch scripts; see "Crunch utility libraries":crunch-utility-libraries.html for details.
+
+h3. Installation
+
+If you are logged in to an Arvados VM, the Python SDK should be installed.
+
+To use the Python SDK elsewhere, you can install from a distribution package, PyPI, or source.
+
+{% include 'notebox_begin' %}
+The Python SDK requires Python 2.7.
+{% include 'notebox_end' %}
+
+h4. Option 1: Install from distribution packages
+
+First, "add the appropriate package repository for your distribution":{{ site.baseurl }}/install/install-manual-prerequisites.html#repos.
+
+{% assign rh_version = "6" %}
+{% include 'note_python_sc' %}
+
+On Red Hat-based systems:
+
+<notextile>
+<pre><code>~$ <span class="userinput">sudo yum install python-arvados-python-client</code>
+</code></pre>
+</notextile>
+
+On Debian-based systems:
+
+<notextile>
+<pre><code>~$ <span class="userinput">sudo apt-get install python-arvados-python-client</code>
+</code></pre>
+</notextile>
+
+h4. Option 2: Install with pip
+
+Run @pip-2.7 install arvados-python-client@ in an appropriate installation environment, such as a virtualenv.
+
+If your version of @pip@ is 1.4 or newer, the @pip install@ command might give an error: "Could not find a version that satisfies the requirement arvados-python-client". If this happens, try @pip-2.7 install --pre arvados-python-client@.
+
+h4. Option 3: Install from source
+
+Install the @python-setuptools@ package from your distribution.  Then run the following:
+
+<notextile>
+<pre><code>~$ <span class="userinput">git clone https://github.com/curoverse/arvados.git</span>
+~$ <span class="userinput">cd arvados/sdk/python</span>
+~/arvados/sdk/python$ <span class="userinput">python2.7 setup.py install</span>
+</code></pre>
+</notextile>
+
+You may optionally run the final installation command in a virtualenv, or with the @--user@ option.
+
+h4. Test installation
+
+If the SDK is installed and your @ARVADOS_API_HOST@ and @ARVADOS_API_TOKEN@ environment variables are set up correctly (see "api-tokens":{{site.baseurl}}/user/reference/api-tokens.html for details), @import arvados@ should produce no errors:
+
+<notextile>
+<pre>~$ <code class="userinput">python2.7</code>
+Python 2.7.4 (default, Sep 26 2013, 03:20:26)
+[GCC 4.7.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> <code class="userinput">import arvados</code>
+>>> <code class="userinput">arvados.api('v1')</code>
+&lt;apiclient.discovery.Resource object at 0x233bb50&gt;
+</pre>
+</notextile>
+
+h3. Examples
+
+Get the User object for the current user:
+
+<notextile>
+<pre><code class="userinput">current_user = arvados.api('v1').users().current().execute()
+</code></pre>
+</notextile>
+
+Get the UUID of an object that was retrieved using the SDK:
+
+<notextile>
+<pre><code class="userinput">my_uuid = current_user['uuid']
+</code></pre>
+</notextile>
+
+Retrieve an object by ID:
+
+<notextile>
+<pre><code class="userinput">some_user = arvados.api('v1').users().get(uuid=my_uuid).execute()
+</code></pre>
+</notextile>
+
+Create an object:
+
+<notextile>
+<pre><code class="userinput">test_link = arvados.api('v1').links().create(
+    body={'link_class':'test','name':'test'}).execute()
+</code></pre>
+</notextile>
+
+Update an object:
+
+<notextile>
+<pre><code class="userinput">arvados.api('v1').links().update(
+    uuid=test_link['uuid'],
+    body={'properties':{'foo':'bar'}}).execute()
+</code></pre>
+</notextile>
+
+Get a list of objects:
+
+<notextile>
+<pre><code class="userinput">repos = arvados.api('v1').repositories().list().execute()
+len(repos['items'])</code>
+2
+<code class="userinput">repos['items'][0]['uuid']</code>
+u'qr1hi-s0uqq-kg8cawglrf74bmw'
+</code></pre>
+</notextile>
+
+h3. Notes
+
+The general form of an API call is:
+
+<notextile>
+<pre><code class="userinput">arvados.api(<i>api_version</i>).<i>plural_resource_type</i>().<i>api_method</i>(<i>parameter</i>=<i>value</i>, ...).execute()
+</code></pre>
+</notextile>
+
+Many API methods accept a parameter whose name is the same as the resource type. For example, @links.create@ accepts a parameter called @link@. This parameter should be given as @body@.
+
+<notextile>
+<pre><code class="userinput">arvados.api('v1').links().create(
+    uuid=test_link['uuid'],
+    body={'properties':{'foo':'bar'}}).execute()
+</code></pre>
+</notextile>
+
+One way to make API calls slightly less verbose is:
+
+<notextile>
+<pre><code class="userinput">arv = arvados.api('v1')
+j = arv.jobs().list().execute()
+</code></pre>
+</notextile>
+
+The SDK retrieves the list of API methods from the server at run time. Therefore, the set of available methods is determined by the server version rather than the SDK version.

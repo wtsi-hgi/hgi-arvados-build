@@ -1,0 +1,1076 @@
+# Copyright (C) The Arvados Authors. All rights reserved.
+#
+# SPDX-License-Identifier: AGPL-3.0
+
+user_agreement_required:
+  uuid: zzzzz-o0j2j-j2qe76q7s3c8aro
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2013-12-26T19:52:21Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2013-12-26T19:52:21Z
+  updated_at: 2013-12-26T19:52:21Z
+  tail_uuid: zzzzz-tpzed-000000000000000
+  link_class: signature
+  name: require
+  head_uuid: zzzzz-4zz18-t68oksiu9m80s4y
+  properties: {}
+
+user_agreement_readable:
+  uuid: zzzzz-o0j2j-qpf60gg4fwjlmex
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-j7d0g-fffffffffffffff
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-t68oksiu9m80s4y
+  properties: {}
+
+all_users_can_read_anonymous_group:
+  uuid: zzzzz-o0j2j-0lhbqyjab4g0bwp
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2015-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2015-01-24 20:42:26 -0800
+  updated_at: 2015-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-j7d0g-fffffffffffffff
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-anonymouspublic
+  properties: {}
+
+active_user_member_of_all_users_group:
+  uuid: zzzzz-o0j2j-ctbysaduejxfrs5
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-fffffffffffffff
+  properties: {}
+
+active_user_can_manage_group:
+  uuid: zzzzz-o0j2j-3sa30nd3bqn1msh
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-02-03 15:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-02-03 15:42:26 -0800
+  updated_at: 2014-02-03 15:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_manage
+  head_uuid: zzzzz-j7d0g-ptt1ou6a9lxrv07
+  properties: {}
+
+user_agreement_signed_by_active:
+  uuid: zzzzz-o0j2j-4x85a69tqlrud1z
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2013-12-26T20:52:21Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2013-12-26T20:52:21Z
+  updated_at: 2013-12-26T20:52:21Z
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: signature
+  name: click
+  head_uuid: zzzzz-4zz18-t68oksiu9m80s4y
+  properties: {}
+
+user_agreement_signed_by_inactive:
+  uuid: zzzzz-o0j2j-lh7er2o3k6bmetw
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2013-12-26T20:52:21Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-7sg468ezxwnodxs
+  modified_at: 2013-12-26T20:52:21Z
+  updated_at: 2013-12-26T20:52:21Z
+  tail_uuid: zzzzz-tpzed-7sg468ezxwnodxs
+  link_class: signature
+  name: click
+  head_uuid: zzzzz-4zz18-t68oksiu9m80s4y
+  properties: {}
+
+spectator_user_member_of_all_users_group:
+  uuid: zzzzz-o0j2j-0s8ql1redzf8kvn
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-fffffffffffffff
+  properties: {}
+
+inactive_user_member_of_all_users_group:
+  uuid: zzzzz-o0j2j-osckxpy5hl5fjk5
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2013-12-26T20:52:21Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-7sg468ezxwnodxs
+  modified_at: 2013-12-26T20:52:21Z
+  updated_at: 2013-12-26T20:52:21Z
+  tail_uuid: zzzzz-tpzed-x9kqpd79egh49c7
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-fffffffffffffff
+  properties: {}
+
+inactive_signed_ua_user_member_of_all_users_group:
+  uuid: zzzzz-o0j2j-qkhyjcr6tidk652
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2013-12-26T20:52:21Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-7sg468ezxwnodxs
+  modified_at: 2013-12-26T20:52:21Z
+  updated_at: 2013-12-26T20:52:21Z
+  tail_uuid: zzzzz-tpzed-7sg468ezxwnodxs
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-fffffffffffffff
+  properties: {}
+
+foo_file_readable_by_active:
+  uuid: zzzzz-o0j2j-dp1d8395ldqw22r
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-znfnqtbbv4spc3w
+  properties: {}
+
+foo_file_readable_by_active_duplicate_permission:
+  uuid: zzzzz-o0j2j-2qlmhgothiur55r
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-znfnqtbbv4spc3w
+  properties: {}
+
+foo_file_readable_by_active_redundant_permission_via_private_group:
+  uuid: zzzzz-o0j2j-5s8ry7sn6bwxb7w
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-j7d0g-22xp1wpjul508rk
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-znfnqtbbv4spc3w
+  properties: {}
+
+foo_file_readable_by_aproject:
+  uuid: zzzzz-o0j2j-fp1d8395ldqw22p
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-j7d0g-v955i6s2oi1cbso
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-znfnqtbbv4spc3w
+  properties: {}
+
+bar_file_readable_by_active:
+  uuid: zzzzz-o0j2j-8hppiuduf8eqdng
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-ehbhgtheo8909or
+  properties: {}
+
+bar_file_readable_by_spectator:
+  uuid: zzzzz-o0j2j-0mhldkqozsltcli
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-ehbhgtheo8909or
+  properties: {}
+
+baz_file_publicly_readable:
+  uuid: zzzzz-o0j2j-132ne3lk954vtoc
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-j7d0g-fffffffffffffff
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-y9vne9npefyxh8g
+  properties: {}
+
+barbaz_job_readable_by_spectator:
+  uuid: zzzzz-o0j2j-cpy7p41hpk531e1
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-8i9sb-cjs4pklxxjykyuq
+  properties: {}
+
+runningbarbaz_job_readable_by_spectator:
+  uuid: zzzzz-o0j2j-cpy7p41hpk531e2
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-8i9sb-cjs4pklxxjykyuj
+  properties: {}
+
+arvados_repository_readable_by_all_users:
+  uuid: zzzzz-o0j2j-allcanreadarvrp
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-j7d0g-fffffffffffffff
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-s0uqq-arvadosrepo0123
+  properties: {}
+
+foo_repository_readable_by_spectator:
+  uuid: zzzzz-o0j2j-cpy7p41hpk5xxx
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-s0uqq-382brsig8rp3666
+  properties: {}
+
+foo_repository_manageable_by_active:
+  uuid: zzzzz-o0j2j-8tdfjd8g0s4rn1k
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_manage
+  head_uuid: zzzzz-s0uqq-382brsig8rp3666
+  properties: {}
+
+repository3_readable_by_active:
+  uuid: zzzzz-o0j2j-43iem9bdtefa76g
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-09-23 13:52:46 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-09-23 13:52:46 -0400
+  updated_at: 2014-09-23 13:52:46 -0400
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-s0uqq-38orljkqpyo1j61
+  properties: {}
+
+repository4_writable_by_active:
+  uuid: zzzzz-o0j2j-lio9debdt6yhkil
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-09-23 13:52:46 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-09-23 13:52:46 -0400
+  updated_at: 2014-09-23 13:52:46 -0400
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_write
+  head_uuid: zzzzz-s0uqq-38oru8hnk57ht34
+  properties: {}
+
+miniadmin_user_is_a_testusergroup_admin:
+  uuid: zzzzz-o0j2j-38vvkciz7qc12j9
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-04-01 13:53:33 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-04-01 13:53:33 -0400
+  updated_at: 2014-04-01 13:53:33 -0400
+  tail_uuid: zzzzz-tpzed-2bg9x0oeydcw5hm
+  link_class: permission
+  name: can_manage
+  head_uuid: zzzzz-j7d0g-48foin4vonvc2at
+  properties: {}
+
+rominiadmin_user_is_a_testusergroup_admin:
+  uuid: zzzzz-o0j2j-6b0hz5hr107mc90
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-04-01 13:53:33 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-04-01 13:53:33 -0400
+  updated_at: 2014-04-01 13:53:33 -0400
+  tail_uuid: zzzzz-tpzed-4hvxm4n25emegis
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-48foin4vonvc2at
+  properties: {}
+
+testusergroup_can_manage_active_user:
+  uuid: zzzzz-o0j2j-2vaqhxz6hsf4k1d
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-04-01 13:56:10 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-04-01 13:56:10 -0400
+  updated_at: 2014-04-01 13:56:10 -0400
+  tail_uuid: zzzzz-j7d0g-48foin4vonvc2at
+  link_class: permission
+  name: can_manage
+  head_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  properties: {}
+
+test_timestamps:
+  uuid: zzzzz-o0j2j-4abnk2w5t86x4uc
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-04-15 13:17:14 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-04-15 13:17:14 -0400
+  updated_at: 2014-04-15 13:17:14 -0400
+  link_class: test
+  name: test
+  properties: {}
+
+admin_can_write_aproject:
+  # Yes, this permission is effectively redundant.
+  # We use it to test that other project admins can see
+  # all the project's sharing.
+  uuid: zzzzz-o0j2j-adminmgsproject
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  link_class: permission
+  name: can_write
+  head_uuid: zzzzz-j7d0g-v955i6s2oi1cbso
+  properties: {}
+
+project_viewer_member_of_all_users_group:
+  uuid: zzzzz-o0j2j-cdnq6627g0h0r2x
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2015-07-28T21:34:41.361747000Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2015-07-28T21:34:41.361747000Z
+  updated_at: 2015-07-28T21:34:41.361747000Z
+  tail_uuid: zzzzz-tpzed-projectviewer1a
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-fffffffffffffff
+  properties: {}
+
+project_viewer_can_read_project:
+  uuid: zzzzz-o0j2j-projviewerreadp
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-projectviewer1a
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-v955i6s2oi1cbso
+  properties: {}
+
+subproject_admin_can_manage_subproject:
+  uuid: zzzzz-o0j2j-subprojadminlnk
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-10-15 10:00:00 -0000
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-10-15 10:00:00 -0000
+  updated_at: 2014-10-15 10:00:00 -0000
+  tail_uuid: zzzzz-tpzed-subprojectadmin
+  link_class: permission
+  name: can_manage
+  head_uuid: zzzzz-j7d0g-axqo7eu9pwvna1x
+  properties: {}
+
+foo_collection_tag:
+  uuid: zzzzz-o0j2j-eedahfaho8aphiv
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-04-21 15:37:48 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-04-21 15:37:48 -0400
+  updated_at: 2014-04-21 15:37:48 -0400
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-fy296fx3hot09f7
+  link_class: tag
+  name: foo_tag
+  properties: {}
+
+active_user_can_manage_bad_group_cx2al9cqkmsf1hs:
+  uuid: zzzzz-o0j2j-ezv55ahzc9lvjwe
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-05-03 18:50:08 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-05-03 18:50:08 -0400
+  updated_at: 2014-05-03 18:50:08 -0400
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_manage
+  head_uuid: zzzzz-j7d0g-cx2al9cqkmsf1hs
+  properties: {}
+
+multilevel_collection_1_readable_by_active:
+  uuid: zzzzz-o0j2j-dp1d8395ldqw22j
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-pyw8yp9g3pr7irn
+  properties: {}
+
+has_symbol_keys_in_database_somehow:
+  uuid: zzzzz-o0j2j-enl1wg58310loc6
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-05-28 16:24:02.314722162 Z
+  modified_by_client_uuid:
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-05-28 16:24:02.314484982 Z
+  tail_uuid: ~
+  link_class: test
+  name: ~
+  head_uuid: ~
+  properties:
+    :foo: "bar"
+    baz:
+      - waz
+      - :waz
+      - :waz
+      - 1
+      - ~
+      - false
+      - true
+  updated_at: 2014-05-28 16:24:02.314296411 Z
+
+bug2931_link_with_null_head_uuid:
+  uuid: zzzzz-o0j2j-uru66qok2wruasb
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-05-30 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-05-30 14:30:00.184019565 Z
+  updated_at: 2014-05-30 14:30:00.183829316 Z
+  link_class: permission
+  name: bug2931
+  tail_uuid: ~
+  head_uuid: ~
+  properties: {}
+
+anonymous_group_can_read_anonymously_accessible_project:
+  uuid: zzzzz-o0j2j-15gpzezqjg4bc4z
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-05-30 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-05-30 14:30:00.184019565 Z
+  updated_at: 2014-05-30 14:30:00.183829316 Z
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-j7d0g-anonymouspublic
+  head_uuid: zzzzz-j7d0g-zhxawtyetzwc5f0
+  properties: {}
+
+anonymous_user_can_read_anonymously_accessible_project:
+  uuid: zzzzz-o0j2j-82nbli3jptwksj1
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-05-30 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-05-30 14:30:00.184019565 Z
+  updated_at: 2014-05-30 14:30:00.183829316 Z
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-tpzed-anonymouspublic
+  head_uuid: zzzzz-j7d0g-zhxawtyetzwc5f0
+  properties: {}
+
+user_agreement_readable_by_anonymously_accessible_project:
+  uuid: zzzzz-o0j2j-o5ds5gvhkztdc8h
+  owner_uuid: zzzzz-j7d0g-zhxawtyetzwc5f0
+  created_at: 2014-06-13 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-06-13 20:42:26 -0800
+  updated_at: 2014-06-13 20:42:26 -0800
+  link_class: permission
+  name: can_read
+
+active_user_permission_to_docker_image_collection:
+  uuid: zzzzz-o0j2j-dp1d8395ldqw33s
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-1v45jub259sjjgb
+  properties: {}
+
+active_user_permission_to_unlinked_docker_image_collection:
+  uuid: zzzzz-o0j2j-g5i0sa8cr3b1psf
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-d0d8z5wofvfgwad
+  properties: {}
+
+docker_image_collection_hash:
+  uuid: zzzzz-o0j2j-dockercollhasha
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-06-11 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-11 14:30:00.184019565 Z
+  updated_at: 2014-06-11 14:30:00.183829316 Z
+  link_class: docker_image_hash
+  name: d8309758b8fe2c81034ffc8a10c36460b77db7bc5e7b448c4e5b684f9d95a678
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-1v45jub259sjjgb
+  properties:
+    image_timestamp: "2014-06-10T14:30:00.184019565Z"
+
+docker_image_collection_tag:
+  uuid: zzzzz-o0j2j-dockercolltagbb
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-06-11 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-11 14:30:00.184019565 Z
+  updated_at: 2014-06-11 14:30:00.183829316 Z
+  link_class: docker_image_repo+tag
+  name: arvados/apitestfixture:latest
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-1v45jub259sjjgb
+  properties:
+    image_timestamp: "2014-06-10T14:30:00.184019565Z"
+
+docker_image_collection_tag2:
+  uuid: zzzzz-o0j2j-dockercolltagbc
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-06-11 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-11 14:30:00.184019565 Z
+  updated_at: 2014-06-11 14:30:00.183829316 Z
+  link_class: docker_image_repo+tag
+  name: arvados/apitestfixture:june10
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-1v45jub259sjjgb
+  properties:
+    image_timestamp: "2014-06-10T14:30:00.184019565Z"
+
+docker_image_collection_hextag:
+  uuid: zzzzz-o0j2j-2591ao7zubhaoxh
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2017-02-13 21:41:06.769936997 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2017-02-13 21:41:06.769422000 Z
+  tail_uuid: ~
+  link_class: docker_image_repo+tag
+  name: arvados/apitestfixture:b25678748af0cac6d1180b9ca4ce3ef31f2b06602f471aad8dfd421e149b0d75
+  head_uuid: zzzzz-4zz18-1v45jub259sjjgb
+  properties: {}
+  updated_at: 2017-02-13 21:41:06.769422000 Z
+
+docker_1_12_image_hash:
+  uuid: zzzzz-o0j2j-f58l58fn65n8v6k
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2017-02-13 21:35:12.602828136 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2017-02-13 21:35:12.602309000 Z
+  tail_uuid: ~
+  link_class: docker_image_hash
+  name: sha256:d8309758b8fe2c81034ffc8a10c36460b77db7bc5e7b448c4e5b684f9d95a678
+  head_uuid: zzzzz-4zz18-1g4g0vhpjn9wq7i
+  properties: {}
+  updated_at: 2017-02-13 21:35:12.602309000 Z
+
+docker_1_12_image_tag:
+  uuid: zzzzz-o0j2j-dybsy0m3u96jkbv
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2017-02-13 21:37:47.441406362 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2017-02-13 21:37:47.440882000 Z
+  tail_uuid: ~
+  link_class: docker_image_repo+tag
+  name: arvados/apitestfixture:latest
+  head_uuid: zzzzz-4zz18-1g4g0vhpjn9wq7i
+  properties: {}
+  updated_at: 2017-02-13 21:37:47.440882000 Z
+
+docker_1_12_image_hextag:
+  uuid: zzzzz-o0j2j-06hzef4u1hbk1g5
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2017-02-13 21:37:47.441406362 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2017-02-13 21:37:47.440882000 Z
+  tail_uuid: ~
+  link_class: docker_image_repo+tag
+  name: arvados/apitestfixture:b25678748af0cac6d1180b9ca4ce3ef31f2b06602f471aad8dfd421e149b0d75
+  head_uuid: zzzzz-4zz18-1g4g0vhpjn9wq7i
+  properties: {}
+  updated_at: 2017-02-13 21:37:47.440882000 Z
+
+ancient_docker_image_collection_hash:
+  # This image helps test that searches for Docker images find
+  # the latest available image: the hash is the same as
+  # docker_image_collection_hash, but it points to a different
+  # Collection and has an older image timestamp.
+  uuid: zzzzz-o0j2j-dockercollhashz
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-06-12 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-12 14:30:00.184019565 Z
+  updated_at: 2014-06-12 14:30:00.183829316 Z
+  link_class: docker_image_hash
+  name: d8309758b8fe2c81034ffc8a10c36460b77db7bc5e7b448c4e5b684f9d95a678
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-t68oksiu9m80s4y
+  properties:
+    image_timestamp: "2010-06-10T14:30:00.184019565Z"
+
+ancient_docker_image_collection_tag:
+  uuid: zzzzz-o0j2j-dockercolltagzz
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-06-12 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-12 14:30:00.184019565 Z
+  updated_at: 2014-06-12 14:30:00.183829316 Z
+  link_class: docker_image_repo+tag
+  name: arvados/apitestfixture:latest
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-t68oksiu9m80s4y
+  properties:
+    image_timestamp: "2010-06-10T14:30:00.184019565Z"
+
+docker_image_tag_like_hash:
+  uuid: zzzzz-o0j2j-dockerhashtagaa
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-06-11 14:30:00.184389725 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-11 14:30:00.184019565 Z
+  updated_at: 2014-06-11 14:30:00.183829316 Z
+  link_class: docker_image_repo+tag
+  name: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:latest
+  tail_uuid: ~
+  head_uuid: zzzzz-4zz18-1v45jub259sjjgb
+  properties:
+    image_timestamp: "2014-06-10T14:30:00.184019565Z"
+
+job_reader_can_read_previous_job_run:
+  # Permission link giving job_reader permission
+  # to read previous_job_run
+  uuid: zzzzz-o0j2j-8bbd851795ebafd
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-06-13 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-tpzed-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-13 20:42:26 -0800
+  updated_at: 2014-06-13 20:42:26 -0800
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-tpzed-905b42d1dd4a354
+  head_uuid: zzzzz-8i9sb-cjs4pklxxjykqqq
+
+job_reader_can_read_foo_repo:
+  # Permission link giving job_reader permission
+  # to read foo_repo
+  uuid: zzzzz-o0j2j-072ec05dc9487f8
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-06-13 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-tpzed-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-13 20:42:26 -0800
+  updated_at: 2014-06-13 20:42:26 -0800
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-tpzed-905b42d1dd4a354
+  head_uuid: zzzzz-s0uqq-382brsig8rp3666
+
+job_reader2_can_read_job_with_components:
+  # Permission link giving job_reader2 permission
+  # to read running_job_with_components
+  uuid: zzzzz-o0j2j-jobcomps4jobrdr
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-06-13 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-tpzed-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-13 20:42:26 -0800
+  updated_at: 2014-06-13 20:42:26 -0800
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-tpzed-readjobwithcomp
+  head_uuid: zzzzz-8i9sb-with2components
+
+job_reader2_can_read_pipeline_from_job_with_components:
+  # Permission link giving job_reader2 permission
+  # to read running_job_with_components
+  uuid: zzzzz-o0j2j-pi4comps4jobrdr
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-06-13 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-tpzed-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-13 20:42:26 -0800
+  updated_at: 2014-06-13 20:42:26 -0800
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-tpzed-readjobwithcomp
+  head_uuid: zzzzz-d1hrv-partdonepipelin
+
+job_reader2_can_read_first_job_from_pipeline_from_job_with_components:
+  # Permission link giving job_reader2 permission
+  # to read running_job_with_components
+  uuid: zzzzz-o0j2j-job4pi4j4jobrdr
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-06-13 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-tpzed-000000000000000
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-06-13 20:42:26 -0800
+  updated_at: 2014-06-13 20:42:26 -0800
+  link_class: permission
+  name: can_read
+  tail_uuid: zzzzz-tpzed-readjobwithcomp
+  head_uuid: zzzzz-8i9sb-cjs4pklxxjykqqq
+
+baz_collection_name_in_asubproject:
+  uuid: zzzzz-o0j2j-bazprojectname2
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-04-21 15:37:48 -0400
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-04-21 15:37:48 -0400
+  updated_at: 2014-04-21 15:37:48 -0400
+  tail_uuid: zzzzz-j7d0g-axqo7eu9pwvna1x
+  head_uuid: ea10d51bcf88862dbcc36eb292017dfd+45
+  link_class: name
+  # This should resemble the default name assigned when a
+  # Collection is added to a Project.
+  name: "ea10d51bcf88862dbcc36eb292017dfd+45 added sometime"
+  properties: {}
+
+empty_collection_name_in_active_user_home_project:
+  uuid: zzzzz-o0j2j-i3n6m552x6tmoi4
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-08-06 22:11:51.242392533 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  modified_at: 2014-08-06 22:11:51.242150425 Z
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: name
+  name: Empty collection
+  head_uuid: d41d8cd98f00b204e9800998ecf8427e+0
+  properties: {}
+  updated_at: 2014-08-06 22:11:51.242010312 Z
+
+active_user_can_read_activeandfriends:
+  uuid: zzzzz-o0j2j-8184f5vk8c851ts
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-08-22 14:03:46.321059945 Z
+  modified_by_client_uuid:
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-08-22 14:03:46.320865926 Z
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-swqu6hmi4pa7bk7
+  properties: {}
+  updated_at: 2014-08-22 14:03:46.320743213 Z
+
+active_user_joined_activeandfriends:
+  uuid: zzzzz-o0j2j-t63rdd7vupqvnco
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-08-22 14:03:28.835064240 Z
+  modified_by_client_uuid:
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-08-22 14:03:28.834849409 Z
+  tail_uuid: zzzzz-j7d0g-swqu6hmi4pa7bk7
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  properties: {}
+  updated_at: 2014-08-22 14:03:28.834720558 Z
+
+future_project_can_read_activeandfriends:
+  uuid: zzzzz-o0j2j-bkdtnddpmwxqiza
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-08-22 14:04:18.811622057 Z
+  modified_by_client_uuid:
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-08-22 14:04:18.811463859 Z
+  tail_uuid: zzzzz-tpzed-futureprojview2
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-swqu6hmi4pa7bk7
+  properties: {}
+  updated_at: 2014-08-22 14:04:18.811387314 Z
+
+future_project_user_joined_activeandfriends:
+  uuid: zzzzz-o0j2j-ksl8bo92eokv332
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-08-22 14:04:24.182103355 Z
+  modified_by_client_uuid:
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-08-22 14:04:24.181939129 Z
+  tail_uuid: zzzzz-j7d0g-swqu6hmi4pa7bk7
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-tpzed-futureprojview2
+  properties: {}
+  updated_at: 2014-08-22 14:04:24.181799856 Z
+
+auto_setup_vm_login_username_can_login_to_test_vm:
+  uuid: zzzzz-o0j2j-i3n6m98766tmoi4
+  owner_uuid: zzzzz-tpzed-xabcdjxw79nv3jz
+  created_at: 2014-08-06 22:11:51.242392533 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-xabcdjxw79nv3jz
+  modified_at: 2014-08-06 22:11:51.242150425 Z
+  tail_uuid: zzzzz-tpzed-xabcdjxw79nv3jz
+  link_class: permission
+  name: can_login
+  head_uuid: zzzzz-2x53u-382brsig8rp3064
+  properties: {username: 'auto_setup_vm_login'}
+  updated_at: 2014-08-06 22:11:51.242010312 Z
+
+admin_can_login_to_testvm2:
+  uuid: zzzzz-o0j2j-peek9mecohgh3ai
+  owner_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  created_at: 2014-08-06 22:11:51.242392533 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-08-06 22:11:51.242150425 Z
+  tail_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  link_class: permission
+  name: can_login
+  head_uuid: zzzzz-2x53u-382brsig8rp3065
+  # username is not obviously related to other user data.
+  properties: {username: 'adminroot', groups: ['docker', 'admin']}
+  updated_at: 2014-08-06 22:11:51.242010312 Z
+
+active_can_login_to_testvm2:
+  uuid: zzzzz-o0j2j-rah2ya1ohx9xaev
+  owner_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  created_at: 2014-08-06 22:11:51.242392533 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-08-06 22:11:51.242150425 Z
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: permission
+  name: can_login
+  head_uuid: zzzzz-2x53u-382brsig8rp3065
+  # No groups.
+  properties: {username: 'active'}
+  updated_at: 2014-08-06 22:11:51.242010312 Z
+
+spectator_login_link_for_testvm2_without_username:
+  uuid: zzzzz-o0j2j-aem0eilie1jigh9
+  owner_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  created_at: 2014-08-06 22:11:51.242392533 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-08-06 22:11:51.242150425 Z
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_login
+  head_uuid: zzzzz-2x53u-382brsig8rp3065
+  updated_at: 2014-08-06 22:11:51.242010312 Z
+
+user_foo_can_read_sharing_group:
+  uuid: zzzzz-o0j2j-gdpvwvpj9kjs5in
+  owner_uuid: zzzzz-tpzed-000000000000000
+  tail_uuid: zzzzz-tpzed-81hsbo6mk8nl05c
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-t4ucgncwteul7zt
+
+user_foo_is_in_sharing_group:
+  uuid: zzzzz-o0j2j-bwmcf9nqwomvtny
+  owner_uuid: zzzzz-tpzed-000000000000000
+  tail_uuid: zzzzz-j7d0g-t4ucgncwteul7zt
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-tpzed-81hsbo6mk8nl05c
+
+user_bar_can_read_sharing_group:
+  uuid: zzzzz-o0j2j-23djaoza9g2zvjx
+  owner_uuid: zzzzz-tpzed-000000000000000
+  tail_uuid: zzzzz-tpzed-n3oaj4sm5fcnwib
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-t4ucgncwteul7zt
+
+user_bar_is_in_sharing_group:
+  uuid: zzzzz-o0j2j-ga7fgy3xsz4hu28
+  owner_uuid: zzzzz-tpzed-000000000000000
+  tail_uuid: zzzzz-j7d0g-t4ucgncwteul7zt
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-tpzed-n3oaj4sm5fcnwib
+
+user1-with-load_member_of_all_users_group:
+  uuid: zzzzz-o0j2j-user1-with-load
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-d9tiejq69daie8f
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-user1withloadab
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-fffffffffffffff
+  properties: {}
+
+empty_collection_name_in_fuse_user_home_project:
+  uuid: zzzzz-o0j2j-hw3mcg3c8pwo6ar
+  owner_uuid: zzzzz-tpzed-0fusedrivertest
+  created_at: 2014-08-06 22:11:51.242392533 Z
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-0fusedrivertest
+  modified_at: 2014-08-06 22:11:51.242150425 Z
+  tail_uuid: zzzzz-tpzed-0fusedrivertest
+  link_class: name
+  name: Empty collection
+  head_uuid: d41d8cd98f00b204e9800998ecf8427e+0
+  properties: {}
+  updated_at: 2014-08-06 22:11:51.242010312 Z
+
+star_project_for_active_user:
+  uuid: zzzzz-o0j2j-starredbyactive
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  link_class: star
+  name: zzzzz-j7d0g-starredshared01
+  head_uuid: zzzzz-j7d0g-starredshared01
+  properties: {}
+
+share_starred_project_with_project_viewer:
+  uuid: zzzzz-o0j2j-sharewithviewer
+  owner_uuid: zzzzz-tpzed-000000000000000
+  tail_uuid: zzzzz-tpzed-projectviewer1a
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-j7d0g-starredshared01
+
+star_shared_project_for_project_viewer:
+  uuid: zzzzz-o0j2j-starredbyviewer
+  owner_uuid: zzzzz-tpzed-projectviewer1a
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-projectviewer1a
+  link_class: star
+  name: zzzzz-j7d0g-starredshared01
+  head_uuid: zzzzz-j7d0g-starredshared01
+  properties: {}
+
+tagged_collection_readable_by_spectator:
+  uuid: zzzzz-o0j2j-readacl4tagcoll
+  owner_uuid: zzzzz-tpzed-000000000000000
+  created_at: 2014-01-24 20:42:26 -0800
+  modified_by_client_uuid: zzzzz-ozdt8-brczlopd8u8d0jr
+  modified_by_user_uuid: zzzzz-tpzed-000000000000000
+  modified_at: 2014-01-24 20:42:26 -0800
+  updated_at: 2014-01-24 20:42:26 -0800
+  tail_uuid: zzzzz-tpzed-l1s2piq4t4mps8r
+  link_class: permission
+  name: can_read
+  head_uuid: zzzzz-4zz18-taggedcolletion
+  properties: {}

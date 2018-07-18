@@ -1,0 +1,261 @@
+# Copyright (C) The Arvados Authors. All rights reserved.
+#
+# SPDX-License-Identifier: AGPL-3.0
+
+queued:
+  uuid: zzzzz-dz642-queuedcontainer
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Queued
+  priority: 1
+  created_at: 2016-01-11 11:11:11.111111111 Z
+  updated_at: 2016-01-11 11:11:11.111111111 Z
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  mounts:
+    /tmp:
+      kind: tmp
+      capacity: 24000000000
+    /var/spool/cwl:
+      kind: tmp
+      capacity: 24000000000
+
+running:
+  uuid: zzzzz-dz642-runningcontainr
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Running
+  priority: 12
+  created_at: <%= 1.minute.ago.to_s(:db) %>
+  updated_at: <%= 1.minute.ago.to_s(:db) %>
+  started_at: <%= 1.minute.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts:
+    /secret/6x9:
+      kind: text
+      content: "42\n"
+  secret_mounts_md5: <%= Digest::MD5.hexdigest(SafeJSON.dump({'/secret/6x9' => {'content' => "42\n", 'kind' => 'text'}})) %>
+  auth_uuid: zzzzz-gj3su-077z32aux8dg2s2
+
+running_older:
+  uuid: zzzzz-dz642-runningcontain2
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Running
+  priority: 1
+  created_at: <%= 2.minute.ago.to_s(:db) %>
+  updated_at: <%= 2.minute.ago.to_s(:db) %>
+  started_at: <%= 2.minute.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+locked:
+  uuid: zzzzz-dz642-lockedcontainer
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Locked
+  locked_by_uuid: zzzzz-gj3su-k9dvestay1plssr
+  priority: 2
+  created_at: <%= 2.minute.ago.to_s(:db) %>
+  updated_at: <%= 2.minute.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+completed:
+  uuid: zzzzz-dz642-compltcontainer
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Complete
+  exit_code: 0
+  priority: 1
+  created_at: 2016-01-11 11:11:11.111111111 Z
+  updated_at: 2016-01-11 11:11:11.111111111 Z
+  started_at: 2016-01-11 11:11:11.111111111 Z
+  finished_at: 2016-01-12 11:12:13.111111111 Z
+  container_image: test
+  cwd: test
+  log: ea10d51bcf88862dbcc36eb292017dfd+45
+  output: 1f4b0bc7583c2a7f9102c395f4ffc5e3+45
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+completed_older:
+  uuid: zzzzz-dz642-compltcontainr2
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Complete
+  exit_code: 0
+  priority: 1
+  created_at: 2016-01-11 11:11:11.111111111 Z
+  updated_at: 2016-01-11 11:11:11.111111111 Z
+  started_at: 2016-01-13 11:11:11.111111111 Z
+  finished_at: 2016-01-14 11:12:13.111111111 Z
+  container_image: test
+  cwd: test
+  output: 1f4b0bc7583c2a7f9102c395f4ffc5e3+45
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+requester:
+  uuid: zzzzz-dz642-requestingcntnr
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Complete
+  exit_code: 0
+  priority: 1
+  created_at: 2016-01-11 11:11:11.111111111 Z
+  updated_at: 2016-01-11 11:11:11.111111111 Z
+  container_image: test
+  cwd: test
+  output: 1f4b0bc7583c2a7f9102c395f4ffc5e3+45
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+requester_container:
+  uuid: zzzzz-dz642-requestercntnr1
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Complete
+  exit_code: 0
+  priority: 1
+  created_at: 2016-01-11 11:11:11.111111111 Z
+  updated_at: 2016-01-11 11:11:11.111111111 Z
+  container_image: test
+  cwd: test
+  output: 1f4b0bc7583c2a7f9102c395f4ffc5e3+45
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+failed_container:
+  uuid: zzzzz-dz642-failedcontainr1
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  state: Complete
+  exit_code: 33
+  priority: 1
+  created_at: 2016-01-11 11:11:11.111111111 Z
+  updated_at: 2016-01-11 11:11:11.111111111 Z
+  container_image: test
+  cwd: test
+  output: 1f4b0bc7583c2a7f9102c395f4ffc5e3+45
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+ancient_container_with_logs:
+  uuid: zzzzz-dz642-logscontainer01
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  state: Complete
+  exit_code: 0
+  priority: 1
+  created_at: <%= 2.year.ago.to_s(:db) %>
+  updated_at: <%= 2.year.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  finished_at: <%= 2.year.ago.to_s(:db) %>
+  log: ea10d51bcf88862dbcc36eb292017dfd+45
+  output: test
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+previous_container_with_logs:
+  uuid: zzzzz-dz642-logscontainer02
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  state: Complete
+  exit_code: 0
+  priority: 1
+  created_at: <%= 1.month.ago.to_s(:db) %>
+  updated_at: <%= 1.month.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  finished_at: <%= 1.month.ago.to_s(:db) %>
+  log: ea10d51bcf88862dbcc36eb292017dfd+45
+  output: test
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+running_container_with_logs:
+  uuid: zzzzz-dz642-logscontainer03
+  owner_uuid: zzzzz-tpzed-xurymjxw79nv3jz
+  state: Running
+  priority: 1
+  created_at: <%= 1.hour.ago.to_s(:db) %>
+  updated_at: <%= 1.hour.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b
+
+running_to_be_deleted:
+  uuid: zzzzz-dz642-runnincntrtodel
+  owner_uuid: zzzzz-tpzed-000000000000000
+  state: Running
+  priority: 1
+  created_at: <%= 1.minute.ago.to_s(:db) %>
+  updated_at: <%= 1.minute.ago.to_s(:db) %>
+  started_at: <%= 1.minute.ago.to_s(:db) %>
+  container_image: test
+  cwd: test
+  output_path: test
+  command: ["echo", "hello"]
+  runtime_constraints:
+    ram: 12000000000
+    vcpus: 4
+  auth_uuid: zzzzz-gj3su-ty6lvu9d7u7c2sq
+  secret_mounts: {}
+  secret_mounts_md5: 99914b932bd37a50b983c5e7c90ae93b

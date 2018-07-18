@@ -1,0 +1,37 @@
+---
+layout: default
+navsection: userguide
+title: Welcome to Arvados&trade;!
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+This guide provides a reference for using Arvados to solve big data bioinformatics problems, including:
+
+* Robust storage of very large files, such as whole genome sequences, using the "Arvados Keep":{{site.baseurl}}/user/tutorials/tutorial-keep.html content-addressable cluster file system.
+* Running compute-intensive genomic analysis pipelines, such as alignment and variant calls using the "Arvados Crunch":{{site.baseurl}}/user/tutorials/intro-crunch.html cluster compute engine.
+* Accessing, organizing, and sharing data, pipelines and results using the "Arvados Workbench":{{site.baseurl}}/user/getting_started/workbench.html web application.
+
+The examples in this guide use the public Arvados instance located at <a href="{{site.arvados_workbench_host}}/" target="_blank">{{site.arvados_workbench_host}}</a>.  If you are using a different Arvados instance replace @{{ site.arvados_workbench_host }}@ with your private instance in all of the examples in this guide.
+
+h2. Typographic conventions
+
+This manual uses the following typographic conventions:
+
+<notextile>
+<ul>
+<li>Code blocks which are set aside from the text indicate user input to the system.  Commands that should be entered into a Unix shell are indicated by the directory where you should  enter the command ('~' indicates your home directory) followed by '$', followed by the highlighted <span class="userinput">command to enter</span> (do not enter the '$'), and possibly followed by example command output in black.  For example, the following block indicates that you should type <code>ls foo.*</code> while in your home directory and the expected output will be "foo.input" and "foo.output".
+<pre><code>~$ <span class="userinput">ls foo.*</span>
+foo.input foo.output
+</code></pre>
+</li>
+
+<li>Code blocks inline with text emphasize specific <code>programs</code>, <code>files</code>, or <code>options</code> that are being discussed.</li>
+<li>Bold text emphasizes <b>specific items</b> to review on Arvados Workbench pages.</li>
+<li>A sequence of steps separated by right arrows (<span class="rarr">&rarr;</span>) indicate a path the user should follow through the Arvados Workbench.  The steps indicate a menu, hyperlink, column name, field name, or other label on the page that guide the user where to look or click.
+</li>
+</ul>
+</notextile>

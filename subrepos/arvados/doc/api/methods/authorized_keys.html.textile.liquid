@@ -1,0 +1,85 @@
+---
+layout: default
+navsection: api
+navmenu: API Methods
+title: "authorized_keys"
+
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+API endpoint base: @https://{{ site.arvados_api_host }}/arvados/v1/authorized_keys@
+
+Object type: @fngyi@
+
+Example UUID: @zzzzz-fngyi-0123456789abcde@
+
+h2. Resource
+
+The authorized_keys resource stores SSH public keys which grant access to virtual machines or git repositories on the Arvados cluster as the user in @authorized_user_uuid@.
+
+Each AuthorizedKey has, in addition to the "Common resource fields":{{site.baseurl}}/api/resources.html:
+
+table(table table-bordered table-condensed).
+|_. Attribute|_. Type|_. Description|_. Example|
+|name|string|A name to help the user manage their keys.||
+|key_type|string|Public key type, currently only supports "SSH"||
+|authorized_user_uuid|string|The user to which this key belongs.  Authentication using this key authenticates as this user.||
+|public_key|text|The actual public key material, e.g., from @~/.ssh/id_rsa.pub@||
+|expires_at|datetime|Expiration date after which the key is no longer valid.||
+
+h2. Methods
+
+See "Common resource methods":{{site.baseurl}}/api/methods.html for more information about @create@, @delete@, @get@, @list@, and @update@.
+
+Required arguments are displayed in %{background:#ccffcc}green%.
+
+h3. create
+
+Create a new AuthorizedKey.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+|authorized_key|object||query||
+
+h3. delete
+
+Delete an existing AuthorizedKey.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the AuthorizedKey in question.|path||
+
+h3. get
+
+Gets a AuthorizedKey's metadata by UUID.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the AuthorizedKey in question.|path||
+
+h3. list
+
+List authorized_keys.
+
+See "common resource list method.":{{site.baseurl}}/api/methods.html#index
+
+h3. update
+
+Update attributes of an existing AuthorizedKey.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the AuthorizedKey in question.|path||
+|authorized_key|object||query||

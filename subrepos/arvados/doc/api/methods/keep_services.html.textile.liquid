@@ -1,0 +1,88 @@
+---
+layout: default
+navsection: api
+navmenu: API Methods
+title: "keep_services"
+
+...
+{% comment %}
+Copyright (C) The Arvados Authors. All rights reserved.
+
+SPDX-License-Identifier: CC-BY-SA-3.0
+{% endcomment %}
+
+API endpoint base: @https://{{ site.arvados_api_host }}/arvados/v1/keep_services@
+
+Object type: @bi6l4@
+
+Example UUID: @zzzzz-bi6l4-0123456789abcde@
+
+h2. Resource
+
+The keep_services resource keep clients to discover storage servers and proxies available on the cluster for persistent storage and retrieval of keep blocks.
+
+Each KeepService has, in addition to the "Common resource fields":{{site.baseurl}}/api/resources.html:
+
+table(table table-bordered table-condensed).
+|_. Attribute|_. Type|_. Description|_. Example|
+|service_host|string|hostname of the server||
+|service_port|integer|TCP port of the service||
+|service_ssl_flag|boolean|if the server uses SSL||
+|service_type|string|The service type, one of "disk", "blob" (cloud object store) or "proxy" (keepproxy)||
+
+h2. Methods
+
+See "Common resource methods":{{site.baseurl}}/api/methods.html for more information about @create@, @delete@, @get@, @list@, and @update@.
+
+Required arguments are displayed in %{background:#ccffcc}green%.
+
+h3. accessible
+
+Get a list of keep services that are accessible to the requesting client.  Unlike @list@, this is context-sensitive based on the requester, for example providing the list of actual Keep servers when inside the cluster, but providing a proxy service if client contacts Arvados from outside the cluster.
+
+h3. create
+
+Create a new KeepService.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+|keep_service|object||query||
+
+h3. delete
+
+Delete an existing KeepService.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the KeepService in question.|path||
+
+h3. get
+
+Gets a KeepService's metadata by UUID.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the KeepService in question.|path||
+
+h3. list
+
+List keep_services.
+
+See "common resource list method.":{{site.baseurl}}/api/methods.html#index
+
+h3. update
+
+Update attributes of an existing KeepService.
+
+Arguments:
+
+table(table table-bordered table-condensed).
+|_. Argument |_. Type |_. Description |_. Location |_. Example |
+{background:#ccffcc}.|uuid|string|The UUID of the KeepService in question.|path||
+|keep_service|object||query||
