@@ -7,6 +7,6 @@ build_debian8:
    - docker-privileged
   image: debian:8
   script:
-    - "subrepos/arvados/build/run-build-packages-one-target.sh debian8"
+    - "ci/build-target.sh debian8"
   only:
     - master
