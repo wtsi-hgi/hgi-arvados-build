@@ -1,6 +1,28 @@
+variables:
+  CI_LOCK_PREFIX: "ci/locks"
+
 stages:
+  - ci-setup
   - build
 
+###############################################################################
+# Stage: ci-setup
+###############################################################################
+build_docker_images:
+  # Do not execute the before script
+  before_script: []
+  stage: ci-setup
+  tags:
+    - docker-privileged
+  image:
+    name: mercury/thrifty-builder
+    entrypoint: [""]
+  script:
+    - ci/build-docker-images.sh
+
+###############################################################################
+# Stage: build
+###############################################################################
 build_debian8:
   stage: build
   tags:
