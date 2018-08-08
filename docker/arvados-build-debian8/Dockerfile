@@ -9,4 +9,6 @@ RUN apt-get update \
          bash \
          build-essential \
          git \
+	 wget \
     && rm -rf /var/lib/apt/lists/*
+
