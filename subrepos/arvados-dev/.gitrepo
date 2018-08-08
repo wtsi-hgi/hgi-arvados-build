@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/curoverse/arvados-dev.git
+	branch = master
+	commit = 928b5c92bf8e4067cb9be238d194d62391155cc7
+	parent = 240958d1da01b973997e35d0d33439cfd8af587d
+	method = merge
+	cmdver = 0.4.0
