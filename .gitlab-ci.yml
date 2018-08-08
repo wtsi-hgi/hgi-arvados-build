@@ -28,6 +28,10 @@ build_debian8:
   tags:
    - docker-privileged
   image: mercury/arvados-build-debian8
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
   script:
     - "ci/build-target.sh debian8"
   only:
