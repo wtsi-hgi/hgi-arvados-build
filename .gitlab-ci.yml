@@ -27,7 +27,7 @@ build_debian8:
   stage: build
   tags:
    - docker-privileged
-  image: debian:8
+  image: mercury/arvados-build-debian8
   script:
     - "ci/build-target.sh debian8"
   only:
