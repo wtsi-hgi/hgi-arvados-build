@@ -36,7 +36,7 @@ done
 set -e
 echo " docker ready."
 
-export WORKSPACE=$"(mktemp -d)/arvados"
+export WORKSPACE="$(mktemp -d)/arvados"
 echo "build-target.sh: using WORKSPACE=${WORKSPACE}"
 
 echo "build-target.sh: cloning arvados repo ${ARVADOS_REPO} into ${WORKSPACE}"
