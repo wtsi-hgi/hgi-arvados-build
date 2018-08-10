@@ -7,6 +7,30 @@ source "${SCRIPT_DIRECTORY}/common.sh"
 
 ensureSet CI_PROJECT_DIR
 
+echo "build-target.sh: starting docker daemon (logging to /var/log/docker-dind.err)"
+nohup dockerd --host=${DOCKER_HOST} > /dev/null 2> /var/log/docker-dind.err &
+dockerpid=$!
+echo "build-target.sh: docker daemon started with pid ${dockerpid}"
+
+# wait for docker.err to log 'acceptconnections() = OK'
+docker_ready=""
+echo -n "build-target.sh: waiting for docker daemon to be ready."
+while test -z "${docker_ready}"
+do
+    if ps -p ${dockerpid} > /dev/null
+    then
+	echo -n "."
+	sleep 0.05 || sleep 1
+	docker_ready=$(grep 'API listen on /var/run/docker-dind.sock' /var/log/docker-dind.err)
+    else
+	echo "docker failed!"
+	echo "build-target.sh: docker daemon exited, logs are:"
+	cat /var/log/docker-dind.err
+	exit 1
+    fi
+done
+echo " docker ready."
+
 target=$1
 echo "build-target.sh: building arvados for ${target}"
 

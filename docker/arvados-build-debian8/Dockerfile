@@ -37,8 +37,5 @@ RUN set -ex; \
     wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; \
     chmod +x /usr/local/bin/dind
 
-# Setup dockerd (docker-in-docker) to run by default
-COPY arvados-build-debian8/dockerd-entrypoint.sh /usr/local/bin/
 VOLUME /var/lib/docker
-ENTRYPOINT ["dockerd-entrypoint.sh"]
 CMD []
