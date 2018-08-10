@@ -1,3 +1,0 @@
-[submodule "submodules/arvados"]
-	path = submodules/arvados
-	url = https://github.com/wtsi-hgi/arvados
