@@ -1,22 +1,21 @@
 #!/bin/sh
 set -e
 
-# no arguments passed
-# or first arg is `-f` or `--some-option`
-if [ "$#" -eq 0 ] || [ "${1#-}" != "$1" ]; then
-    # add our default arguments
-    set -- dockerd \
-	--host=unix:///var/run/docker-dind.sock \
-	"$@"
-fi
+nohup dockerd --host=${DOCKER_HOST} > /var/log/docker.out 2> /var/log/docker.err &
+dockerpid=$!
 
-if [ "$1" = 'dockerd' ]; then
-    # if we're running Docker, let's pipe through dind
-    # (and we'll run dind explicitly with "sh" since its shebang is /bin/bash)
-    set -- sh "$(which dind)" "$@"
+# wait for docker.err to log 'acceptconnections() = OK'
+docker_ready=""
+echo -n "Waiting for docker daemon to be ready."
+while test -z "${docker_ready}"
+do
+    # docker hasn't reported that it is ready yet, check if it has exited
+    grep -q exit /var/log/docker.err && echo " docker daemon has exited!" && echo "docker log:" && cat /var/log/docker.err && exit 1
 
-    # explicitly remove Docker's default PID file to ensure that it can start properly if it was stopped uncleanly (and thus didn't clean up the PID file)
-    find /run /var/run -iname 'docker*.pid' -delete
-fi
+    echo -n "."
+    sleep 0.05 || sleep 1
+    docker_ready=$(grep 'acceptconnections.*=.*OK' /var/log/docker.err)
+done
+echo " docker ready."
 
 exec "$@"
