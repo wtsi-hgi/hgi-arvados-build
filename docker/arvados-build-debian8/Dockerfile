@@ -38,7 +38,7 @@ RUN set -ex; \
     chmod +x /usr/local/bin/dind
 
 # Setup dockerd (docker-in-docker) to run by default
-COPY dockerd-entrypoint.sh /usr/local/bin/
+COPY hgi-arvados-build/dockerd-entrypoint.sh /usr/local/bin/
 VOLUME /var/lib/docker
 ENTRYPOINT ["dockerd-entrypoint.sh"]
 CMD []
