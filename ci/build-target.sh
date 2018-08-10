@@ -48,5 +48,9 @@ echo "build-target.sh: checking out revision ${ARVADOS_REVISION}"
 echo "build-target.sh: calling run-build-packages-one-target.sh --target ${target}"
 ${WORKSPACE}/build/run-build-packages-one-target.sh --target ${target}
 
+echo "build-target.sh: uploading ${WORKSPACE}/packages/${target}"
+ls -l "${WORKSPACE}/packages/${target}"
+echo "not uploading"
+
 echo "build-target.sh: done!"
 exit 0
