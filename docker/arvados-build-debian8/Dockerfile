@@ -29,7 +29,7 @@ RUN (curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -) \
     && rm -rf /var/lib/apt/lists/*
 
 # Set DOCKER_HOST for docker client to find docker-dind socket
-ENV DOCKER_HOST unix://var/run/docker-dind.sock
+ENV DOCKER_HOST unix:///var/run/docker-dind.sock
 
 # Install dind (docker-in-docker wrapper)
 ENV DIND_COMMIT 52379fa76dee07ca038624d639d9e14f4fb719ff
