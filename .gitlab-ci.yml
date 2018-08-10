@@ -28,6 +28,9 @@ build_debian8:
   tags:
    - docker-privileged
   image: mercury/arvados-build-debian8
+  variables:
+    ARVADOS_REPO: https://github.com/wtsi-hgi/arvados.git
+    ARVADOS_REVISION: master
   script:
     - "ci/build-target.sh debian8"
   only:

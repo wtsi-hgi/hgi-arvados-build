@@ -36,12 +36,14 @@ done
 set -e
 echo " docker ready."
 
-echo "build-target.sh: initializing and updating submodules"
-git submodule init
-git submodule update
-
-export WORKSPACE=${CI_PROJECT_DIR}/submodules/arvados
+export WORKSPACE=$"(mktemp -d)/arvados"
 echo "build-target.sh: using WORKSPACE=${WORKSPACE}"
+
+echo "build-target.sh: cloning arvados repo ${ARVADOS_REPO} into ${WORKSPACE}"
+git clone "${ARVADOS_REPO}" "${WORKSPACE}"
+
+echo "build-target.sh: checking out revision ${ARVADOS_REVISION}"
+(cd "${WORKSPACE}" && git checkout "${ARVADOS_REVISION}")
 
 echo "build-target.sh: calling run-build-packages-one-target.sh --target ${target}"
 ${WORKSPACE}/build/run-build-packages-one-target.sh --target ${target}
