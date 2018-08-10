@@ -7,6 +7,9 @@ source "${SCRIPT_DIRECTORY}/common.sh"
 
 ensureSet CI_PROJECT_DIR
 
+target=$1
+echo "build-target.sh: building arvados for ${target}"
+
 echo "build-target.sh: starting docker daemon (logging to /var/log/docker-dind.err)"
 nohup dockerd --host=${DOCKER_HOST} --mtu 1400 > /dev/null 2> /var/log/docker-dind.err &
 dockerpid=$!
@@ -33,10 +36,11 @@ done
 set -e
 echo " docker ready."
 
-target=$1
-echo "build-target.sh: building arvados for ${target}"
+echo "build-target.sh: initializing and updating submodules"
+git submodule init
+git submodule update
 
-export WORKSPACE=${CI_PROJECT_DIR}/subrepos/arvados
+export WORKSPACE=${CI_PROJECT_DIR}/submodules/arvados
 echo "build-target.sh: using WORKSPACE=${WORKSPACE}"
 
 echo "build-target.sh: calling run-build-packages-one-target.sh --target ${target}"
