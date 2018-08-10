@@ -15,6 +15,7 @@ echo "build-target.sh: docker daemon started with pid ${dockerpid}"
 # wait for docker.err to log 'acceptconnections() = OK'
 docker_ready=""
 echo -n "build-target.sh: waiting for docker daemon to be ready."
+set +e
 while test -z "${docker_ready}"
 do
     if ps -p ${dockerpid} > /dev/null
@@ -29,6 +30,7 @@ do
 	exit 1
     fi
 done
+set -e
 echo " docker ready."
 
 target=$1
