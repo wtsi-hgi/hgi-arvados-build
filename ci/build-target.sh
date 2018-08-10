@@ -8,7 +8,7 @@ source "${SCRIPT_DIRECTORY}/common.sh"
 ensureSet CI_PROJECT_DIR
 
 echo "build-target.sh: starting docker daemon (logging to /var/log/docker-dind.err)"
-nohup dockerd --host=${DOCKER_HOST} > /dev/null 2> /var/log/docker-dind.err &
+nohup dockerd --host=${DOCKER_HOST} --mtu 1400 > /dev/null 2> /var/log/docker-dind.err &
 dockerpid=$!
 echo "build-target.sh: docker daemon started with pid ${dockerpid}"
 
