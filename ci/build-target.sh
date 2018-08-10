@@ -13,9 +13,6 @@ echo "build-target.sh: building arvados for ${target}"
 export WORKSPACE=${CI_PROJECT_DIR}/subrepos/arvados
 echo "build-target.sh: using WORKSPACE=${WORKSPACE}"
 
-export JENKINS_DIR=${CI_PROJECT_DIR}/subrepos/arvados/build
-echo "build-target.sh: using JENKINS_DIR=${JENKINS_DIR}"
-
 echo "build-target.sh: calling run-build-packages-one-target.sh --target ${target}"
 ${WORKSPACE}/build/run-build-packages-one-target.sh --target ${target}
 
