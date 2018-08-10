@@ -151,8 +151,6 @@ else
 fi
 
 JENKINS_DIR=$(dirname "$(readlink -e "$0")")
-echo >&2 "JENKINS_DIR is ${JENKINS_DIR} and contains:"
-ls ${JENKINS_DIR}
 
 if [[ -n "$test_packages" ]]; then
     pushd "$JENKINS_DIR/package-test-dockerfiles"
